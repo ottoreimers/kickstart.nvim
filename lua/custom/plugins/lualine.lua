@@ -2,10 +2,10 @@ return {
   'nvim-lualine/lualine.nvim',
   depends = { 'nvim-tree/nvim-web-devicons' },
   config = function()
-    vim.cmd 'colorscheme kanagawa'
+    -- vim.cmd 'colorscheme shadow'
     require('lualine').setup {
       options = {
-        theme = 'kanagawa',
+        -- theme = 'shadow',
         section_separators = { '', '' },
         component_separators = { '', '' },
       },

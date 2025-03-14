@@ -142,7 +142,7 @@ examples of adding popularly requested plugins.
 
 Below you can find OS specific install instructions for Neovim and dependencies.
 
-After installing all the dependencies continue with the [Install Kickstart](#Install-Kickstart) step.
+After installing all the dependencies continue with the [Install Kickstart](#Install-Kickstart) stepg
 
 #### Windows Installation
 
