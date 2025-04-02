@@ -81,6 +81,10 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+vim.diagnostic.config {
+  virtual_lines = true,
+  virtual_text = true,
+}
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
@@ -483,19 +487,19 @@ require('lazy').setup({
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {
-        --   require('lspconfig').pyright.setup {
-        --     python = {
-        --       analysis = {
-        --         typeCheckingMode = 'off',
-        --         diagnosticMode = 'workspace',
-        --         autoSearchPaths = true,
-        --         useLibraryCodeForTypes = true,
-        --       },
-        --     },
-        --   },
-        -- },
-        -- rust_analyzer = {},
+        pyright = {
+          require('lspconfig').pyright.setup {
+            python = {
+              analysis = {
+                typeCheckingMode = 'off',
+                diagnosticMode = 'workspace',
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+              },
+            },
+          },
+        },
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
