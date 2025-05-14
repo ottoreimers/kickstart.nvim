@@ -83,7 +83,6 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 vim.diagnostic.config {
   virtual_lines = true,
-  virtual_text = true,
 }
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
@@ -389,19 +388,19 @@ require('lazy').setup({
           -- Jump to the definition of the word under your cursor.
           --  This is where a variable was first declared, or where a function is defined, etc.
           --  To jump back, press <C-t>.
-          -- map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
+          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
           --
           -- -- Find references for the word under your cursor.
-          -- map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
           --
           -- -- Jump to the implementation of the word under your cursor.
           -- --  Useful when your language has ways of declaring types without an actual implementation.
-          -- map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
+          map('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
           --
           -- -- Jump to the type of the word under your cursor.
           -- --  Useful when you're not sure what type a variable is and you want to see
           -- --  the definition of its *type*, not where it was *defined*.
-          -- map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
           --
           -- -- Fuzzy find all the symbols in your current document.
           -- --  Symbols are things like variables, functions, types, etc.
@@ -702,25 +701,12 @@ require('lazy').setup({
       }
     end,
   },
-
-  -- {
-  --   'sainnhe/everforest',
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     -- Optionally configure and load the colorscheme
-  --     -- directly inside the plugin declaration.
-  --     vim.g.everforest_background = 'hard'
-  --     vim.g.everforest_enable_italic = true
-  --     vim.cmd.colorscheme 'everforest'
-  --   end,
-  -- },
   {
-    'rjshkhr/shadow.nvim',
+    'wtfox/jellybeans.nvim',
+    lazy = false,
     priority = 1000,
     config = function()
-      vim.opt.termguicolors = true
-      vim.cmd.colorscheme 'shadow'
+      vim.cmd 'colorscheme jellybeans'
     end,
   },
   -- Highlight todo, notes, etc in comments

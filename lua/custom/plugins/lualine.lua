@@ -2,10 +2,10 @@ return {
   'nvim-lualine/lualine.nvim',
   depends = { 'nvim-tree/nvim-web-devicons' },
   config = function()
-    -- vim.cmd 'colorscheme shadow'
+    vim.cmd 'colorscheme jellybeans'
     require('lualine').setup {
       options = {
-        -- theme = 'shadow',
+        theme = 'jellybeans',
         section_separators = { '', '' },
         component_separators = { '', '' },
       },
